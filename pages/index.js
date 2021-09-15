@@ -29,7 +29,7 @@ export default function Home({ writeups }) {
                   <br />
                   <b>Company:</b> {writeup.company_id}
                   <br />
-                  <b>Link:</b> {writeup.link}
+                  <b>Link:</b> {writeup.real_link}
                   <br />
                   <b>Short link:</b> {writeup.short_link}
                   <br />
