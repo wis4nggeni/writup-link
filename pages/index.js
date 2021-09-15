@@ -22,6 +22,7 @@ export default function Home({ writeups }) {
             return (
               <div key={writeup.writeup_id} className={styles.card}>
                 <h3>{writeup.title}</h3>
+                <img src='https://serene-rosalind-05dde0.netlify.app/images/'+{writeup.company_id}+'.png'>
                 <p>
                   <b>Author:</b> {writeup.author}
                   <br />
