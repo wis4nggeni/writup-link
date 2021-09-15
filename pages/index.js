@@ -24,7 +24,7 @@ export default function Home({ writeups }) {
                 <h3>{writeup.title}</h3>
                 <img alt="Company Logo" class="img-logo" height="40" width="38"/>
                 <script type="text/javascript"> 
-                var imgsrc = "https://serene-rosalind-05dde0.netlify.app/images/"+{writeup.company_id}+".png;
+                var imgsrc = "https://serene-rosalind-05dde0.netlify.app/images/"+{writeup.company_id}+".png";
                 document.querySelector('.img-logo').setAttribute('src', imgsrc);
                 </script>  
                   <p>
