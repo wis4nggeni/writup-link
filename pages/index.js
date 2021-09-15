@@ -1,33 +1,39 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import { getCharacters } from "../lib/astra";
+import { getWriteups } from "../lib/astra";
 
-export default function Home({ characters }) {
+export default function Home({ writeups }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>Create Next App</title>
+        <title>Writeup Link</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
       <main className={styles.main}>
         <h1 className={styles.title}>
-          Simple Next.js +{" "}
-          <a href="https://astra.datastax.com/register">Astra</a> sample!
+          writeup.link
         </h1>
         <p className={styles.description}>
-          Get started by editing{" "}
-          <code className={styles.code}>pages/index.js</code>
+          Information security writeup directory.
         </p>
         <div className={styles.grid}>
-          {characters.map((character) => {
+          {characters.map((writeup) => {
             return (
-              <div key={character.id} className={styles.card}>
-                <h3>{character.name}</h3>
+              <div key={writeup.writeup_id} className={styles.card}>
+                <h3>{writeup.title}</h3>
                 <p>
-                  <b>Actor:</b> {character.actor_name}
+                  <b>Author:</b> {writeup.author}
                   <br />
-                  <b>House:</b> {character.house_name}
+                  <b>Date:</b> {writeup.date}
+                  <br />
+                  <b>Company:</b> {writeup.company_id}
+                  <br />
+                  <b>Link:</b> {writeup.link}
+                  <br />
+                  <b>Short link:</b> {writeup.short_link}
+                  <br />
+                  <b>Archive link:</b> {writeup.archive_link}
                 </p>
               </div>
             );
@@ -49,8 +55,8 @@ export default function Home({ characters }) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const characters = (await getCharacters()) || [];
+  const characters = (await getWriteups()) || [];
   return {
-    props: { characters, preview },
+    props: { writeups, preview },
   };
 }
