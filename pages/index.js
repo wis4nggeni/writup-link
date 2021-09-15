@@ -22,11 +22,12 @@ export default function Home({ writeups }) {
             return (
               <div key={writeup.writeup_id} className={styles.card}>
                 <h3>{writeup.title}</h3>
-                <img alt="Company Logo" class="img-logo" height="40" width="38"/>
-                <script type="text/javascript"> 
-                var imgsrc = "https://serene-rosalind-05dde0.netlify.app/images/"+{writeup.company_id}+".png";
-                document.querySelector('.img-logo').setAttribute('src', imgsrc);
-                </script>  
+                <Image
+                  src="https://serene-rosalind-05dde0.netlify.app/images/"+{writeup.company_id}+".png"
+                  alt="Picture of the company"
+                  width={500}
+                  height={500}
+                  />
                   <p>
                   <b>Author:</b> {writeup.author}
                   <br />
