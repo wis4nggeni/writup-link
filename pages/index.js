@@ -24,7 +24,7 @@ export default function Home({ writeups }) {
               <div key={writeup.writeup_id} className={styles.card}>
                 <h3>{writeup.title}</h3>
                 <Image
-                  src="{`https://serene-rosalind-05dde0.netlify.app/images/`writeup.company_id`.png`}"
+                  src={`https://serene-rosalind-05dde0.netlify.app/images/`writeup.company_id`.png`}
                   alt="Picture of the company"
                   width={500}
                   height={500}
