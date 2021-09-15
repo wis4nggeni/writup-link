@@ -18,7 +18,7 @@ export default function Home({ writeups }) {
           Information security writeup directory.
         </p>
         <div className={styles.grid}>
-          {characters.map((writeup) => {
+          {writeups.map((writeup) => {
             return (
               <div key={writeup.writeup_id} className={styles.card}>
                 <h3>{writeup.title}</h3>
@@ -55,7 +55,7 @@ export default function Home({ writeups }) {
 }
 
 export async function getStaticProps({ preview = false }) {
-  const characters = (await getWriteups()) || [];
+  const writeups = (await getWriteups()) || [];
   return {
     props: { writeups, preview },
   };
